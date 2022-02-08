@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 //Three libraries to import from: redux, redux-thunk, react-redux
+//Redux DevTools for debugging application's state changes.
 import usersReducer from './reducers/users.js'
 
 
@@ -16,7 +17,9 @@ const reducer = combineReducers({
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+//create the store - the store always takes a reducer
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
+
 
 
 //Standard boilerplate code - Wrap provider in the store
