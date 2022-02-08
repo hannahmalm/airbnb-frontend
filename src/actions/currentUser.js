@@ -14,6 +14,12 @@ export const setCurrentUser = user => {
 //auth controller --> Ensure this is set up on the backend 
 export const login = credentials => {
     return dispatch => {
-        return fetch("http://localhost:3000/")
-    }
+        return fetch("http://localhost:3000/api/v1/login", {
+        method: "POST", //POST because sending
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(credentials) //needed for all POST requests
+    }) 
+}
 }
