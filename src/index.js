@@ -9,19 +9,17 @@ import { Provider } from 'react-redux' //connects global state (store) to the en
 //Three libraries to import from: redux, redux-thunk, react-redux
 //Redux DevTools for debugging application's state changes.
 import usersReducer from './reducers/users.js'
+//https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/   --BEST VIDEO FOR REDUX 
 
+//STORE 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //apply the middleware and dev tools
+const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk))) //create the store - the store always takes a reducer(in this case allReducers)
 
+//COMBINED REDUCERS --> Refactor into its own file and import
+//requires usersReducer from import --> Remeber that reducers have thier own file 
 const allReducers = combineReducers({
   user: usersReducer //this is what will show up in my store as the key value
 })
-
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-//create the store - the store always takes a reducer(in this case allReducers)
-const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk)))
-
-//action returns a function 
-
 
 
 //Standard boilerplate code - Wrap provider in the store
