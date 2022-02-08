@@ -9,6 +9,7 @@ import { Provider } from 'react-redux' //connects global state (store) to the en
 //Three libraries to import from: redux, redux-thunk, react-redux
 //Redux DevTools for debugging application's state changes.
 import usersReducer from './reducers/users.js'
+import currentUsersReducer from './reducers/currentUsers.js'
 //https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/   --BEST VIDEO FOR REDUX 
 
 //STORE 
@@ -17,8 +18,15 @@ const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk))) 
 
 //COMBINED REDUCERS --> Refactor into its own file and import
 //requires usersReducer from import --> Remeber that reducers have thier own file 
+//To pass reducers into CombineReducers the following must be met
+  //For any action that is not recognized, it must return the state given to it as the first argument.
+  //It must never return undefined. It is too easy to do this by mistake via an early return statement, so combineReducers throws if you do that instead of letting the error manifest itself somewhere else.
+  //If the state given to it is undefined, it must return the initial state for this specific reducer. 
+
+  //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
 const allReducers = combineReducers({
-  user: usersReducer //this is what will show up in my store as the key value
+  user: usersReducer, //this is what will show up in my store as the key value
+  currentUser: currentUsersReducer
 })
 
 
