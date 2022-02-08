@@ -7,10 +7,11 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 //Three libraries to import from: redux, redux-thunk, react-redux
+import usersReducer from './reducers/users.js'
 
-const users = () => []
+
 const reducer = combineReducers({
-  users
+  user: usersReducer //this is what will show up in my store as the key value
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
