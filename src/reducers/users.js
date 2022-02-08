@@ -1,3 +1,4 @@
+//create a file for each reducer and export default each reducer --> Import this into index.js
 export default (state = [], action)  => {
     switch (action.type){
         default: 
