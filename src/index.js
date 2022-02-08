@@ -10,6 +10,9 @@ import { Provider } from 'react-redux' //connects global state (store) to the en
 //Redux DevTools for debugging application's state changes.
 import usersReducer from './reducers/users.js'
 import currentUserReducer from './reducers/currentUser.js'
+import loginFormReducer  from './reducers/loginForm';
+import { login } from './actions/currentUser';
+import loginForm from './reducers/loginForm';
 //https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/   --BEST VIDEO FOR REDUX 
 
 
@@ -23,7 +26,8 @@ import currentUserReducer from './reducers/currentUser.js'
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
 const allReducers = combineReducers({
   user: usersReducer, //this is what will show up in my store as the key value
-  currentUser: currentUserReducer
+  currentUser: currentUserReducer,
+  loginForm: loginFormReducer
 })
 
 //STORE 
