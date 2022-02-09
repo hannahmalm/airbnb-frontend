@@ -8,7 +8,7 @@
 //When The action is = to the case SET CURRENT USER, return the user, else by default, return null
 export default (state = null, action)  => {
     switch (action.type){
-        case "SET_CURRENT_USER":
+        case "GET_CURRENT_USER":
             return action.user
         default:
         return state

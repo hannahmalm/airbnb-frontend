@@ -3,12 +3,12 @@
 
 //synchronous action creator
 //all actions need a type and a payload
-export const setCurrentUser = user => {
-    console.log('setCurrentUser');
+export const getCurrentUser = user => {
+    console.log('getCurrentUser');
     return {
     //return an action -> key of type with a payload
     //an action is an object
-    type: "SET_CURRENT_USER", //THIS IS THE SAME TYPE AS THE ONE IN THE REDUCER
+    type: "GET_CURRENT_USER", //THIS IS THE SAME TYPE AS THE ONE IN THE REDUCER
     payload: user
     }
 }
@@ -32,7 +32,7 @@ export const login = credentials => {
         .then(response => {
             //dispatch the action to go to the currentUser.js reducer & set the state to current user
             console.log("logged in")
-            dispatch(setCurrentUser(currentUser))
+            dispatch(getCurrentUser(login))
         })
     }
 //store.dispatch(login)  //--> Thunk is dispatched by calling the action creater
