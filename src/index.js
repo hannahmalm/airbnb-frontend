@@ -9,11 +9,11 @@ import thunk from 'redux-thunk' //The redux-thunk middleware, which allows simpl
 import { Provider } from 'react-redux' //connects global state (store) to the entire app under ReactDOM
 //Three libraries to import from: redux, redux-thunk, react-redux
 //Redux DevTools for debugging application's state changes.
+//---------REDUCERS IMPORTED------------------------------------------------------
 import usersReducer from './reducers/users.js'
-import currentUserReducer from './reducers/currentUser.js'
-import loginFormReducer  from './reducers/loginForm';
-import { login } from './actions/currentUser';
-import loginForm from './reducers/loginForm';
+//import currentUserReducer from './reducers/currentUser.js'
+
+
 //https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/   --BEST VIDEO FOR REDUX 
 
 
@@ -26,9 +26,9 @@ import loginForm from './reducers/loginForm';
 
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
 const allReducers = combineReducers({
-  user: usersReducer, //this is what will show up in my store as the key value
-  currentUser: currentUserReducer,
-  loginForm: loginFormReducer
+  user: usersReducer //this is what will show up in my store as the key value
+  // currentUser: currentUserReducer,
+  // loginForm: loginFormReducer
 })
 
 //STORE 
