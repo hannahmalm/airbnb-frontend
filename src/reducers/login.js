@@ -7,7 +7,7 @@ const initialLoginState = {
 export default (state = initialLoginState, action)  => {
     switch (action.type){
         case "UPDATE_LOGIN_FORM":
-            return action.user
+            return action.loginFormdata
         default:
         return state
     }
