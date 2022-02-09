@@ -14,7 +14,7 @@ import { Provider } from 'react-redux' //connects global state (store) to the en
 
 
 //---------REDUCERS IMPORTED------------------------------------------------------
-import usersReducer from './reducers/users.js'
+// import usersReducer from './reducers/users.js'
 
 
 
@@ -30,7 +30,7 @@ import usersReducer from './reducers/users.js'
 
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
 const allReducers = combineReducers({
-  user: usersReducer //this is what will show up in my store as the key value
+  // currentUser: currentUsersReducer //this is what will show up in my store as the key value
 })
 
 //---------CREATING THE STORE ---------------------------------------------------
