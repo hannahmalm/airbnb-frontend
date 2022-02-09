@@ -4,6 +4,7 @@
 //synchronous action creator
 //all actions need a type and a payload
 export const setCurrentUser = user => {
+    console.log('setCurrentUser');
     return {
     //return an action -> key of type with a payload
     //an action is an object
@@ -20,12 +21,19 @@ export const setCurrentUser = user => {
 //Rather than execute some logic now, we can write a function body or code that can be used to perform the work later.
 //"thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
 export const login = credentials => {
+    console.log('submit', credentials);
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/login", 
         { method: "POST", //POST because sending credentials
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(credentials) //needed for all POST requests
         }) 
+        .then(response => response.json()) //then refactor response into json
+        .then(response => {
+            //dispatch the action to go to the currentUser.js reducer & set the state to current user
+            console.log("logged in")
+            dispatch(setCurrentUser(currentUser))
+        })
     }
 //store.dispatch(login)  //--> Thunk is dispatched by calling the action creater
 }
