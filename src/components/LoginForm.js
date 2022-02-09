@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from 'react'
+import React from 'react';
 import {connect} from 'react-redux' //The connect() function connects a React component to a Redux store.
 import { updateLoginForm } from '../actions/login.js' //import login form 
 
@@ -18,7 +18,7 @@ const Login = (props, updateLoginForm) => {
     return (
         <form id="login_form" onSubmit={undefined}>
             <input name="username" type="text" value={props.username} placeholder='Username' onChange={(e) => updateLoginForm({undefined})}/>
-            <input name="password" type="text" value={props.password} placeholder='Password' onChange={(e) => updateLoginForm({name: e.target.name, value: e.target.value})}/>
+            {/* <input name="password" type="text" value={props.password} placeholder='Password' onChange={(e) => updateLoginForm({name: e.target.name, value: e.target.value})}/> */}
             <input type="submit" value="Log In"></input>
         </form>
 
@@ -43,4 +43,4 @@ const Login = (props, updateLoginForm) => {
  //mapstae is the first argument in connect
  //second argument is 
 //   export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login);
-export default {Login}
+export default Login
