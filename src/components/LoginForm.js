@@ -5,33 +5,34 @@ import { login } from "../actions/currentUser.js"
 
 //basic login form boilerplate
 
+const Login = (loginFormData) => {
 
 
-return (
-    <form id="login_form" onSubmit={handleSubmit}>
-        <input name="username" type="text" onChange={handleChange} value={}/>
-        <input name="password" type="text" onChange={handleChange} value={}/>
-        <input type="submit" value="Log In"></input>
-    </form>
+    //onSubmit is when the form submit button is pressed
+    const handleSubmit = e => {
+        e.preventDefault()
+        login(loginFormData)
+    }
 
-)
+    return (
+        <form id="login_form" onSubmit={handleSubmit}>
+            <input name="username" type="text" value={loginFormData.username}/>
+            <input name="password" type="text" value={loginFormData.password}/>
+            <input type="submit" value="Log In"></input>
+        </form>
 
-//onSubmit is when the form submit button is pressed
-const handleSubmit = e => {
-
-
-}
-
-//onchange is an event that declares when an input is changed. 
-const handleChange = e => {
+    )
 
 }
 
 
-// const mapStateToProps = (state) => {
-//     return {
-//       login: state.user.login
-//     }
-//   }
+// Connect - Extracting data with mapStateToProps
+// mapStateToProps is used for selecting the part of the data from the store that the connected component needs. 
+function mapState(state) {
+    // const { login } = state
+  return { 
+      loginFormData: state.loginForm
+   }
+ }
   
-//   export default connect(mapStateToProps)(withRouter(RightContent));
+  export default connect(mapState, {login})(Login);
