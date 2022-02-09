@@ -1,16 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux' //The connect() function connects a React component to a Redux store.
-import { updateLoginForm } from '../actions/login.js' //import login form 
+import { updateLoginForm } from '../actions/login.js' //import action creator
 
 
 //basic login form boilerplate
 //props get passed into functional component as an argument & object
 //const Login = (props, updateLoginForm) => {
-const Login = ({username, password, updateLoginForm}) => {
+const Login = ({loginForm, updateLoginForm}) => {
+
+    //HANDLE CHANGE
+    const handleChange = event => {
+        const { name, value } = event.target
+        const updatedFormInfo = {
+            ...loginForm,
+            [name]: value
+        }
+        updateLoginForm(updatedFormInfo)
+    }
+
      return (
         <form onSubmit={undefined}>
-            <input name="username" type="text" value={username} placeholder='Username' onChange={undefined}/>
-            <input name="password" type="text" value={password} placeholder='Password' onChange={undefined}/>
+            <input name="username" type="text" value={loginForm.username} placeholder='Username' onChange={handleChange}/>
+            <input name="password" type="text" value={loginForm.password} placeholder='Password' onChange={handleChange}/>
             <input type="submit" value="Log In"></input>
         </form>
     )
@@ -38,10 +49,13 @@ const Login = ({username, password, updateLoginForm}) => {
 const mapStateToProps = state => {
     //Gives access to these parts of state as props --> Get the username and password from the store
     //If you dont know this, look at the store in redux
-  return { 
-      username: state.login.username,
-      password: state.login.password
-   }
+//   return { 
+//       username: state.login.username,
+//       password: state.login.password
+//    }
+    return {
+        loginForm: state.login
+    }
  }
   
  //ability to connect from react-redux
@@ -50,4 +64,4 @@ const mapStateToProps = state => {
  //second argument is 
  // export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
 // export default Login
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps, {updateLoginForm})(Login)
