@@ -25,7 +25,7 @@ import usersReducer from './reducers/users.js'
   //If the state given to it is undefined, it must return the initial state for this specific reducer. 
 
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
-const allReducers = combineReducers({
+const combineReducers = combineReducers({
   user: usersReducer //this is what will show up in my store as the key value
   // currentUser: currentUserReducer,
   // loginForm: loginFormReducer
@@ -33,7 +33,10 @@ const allReducers = combineReducers({
 
 //STORE 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //apply the middleware and dev tools
-const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk))) //create the store - the store always takes a reducer(in this case allReducers)
+
+//creating a store takes 3 args - reduce function, preLoadedState, compose function(applyMiddleware with Thunk)
+//allReducers = A reducing function that returns the next state tree, given the current state tree and an action to handle.
+const store = createStore(combineReducers, composeEnhancer(applyMiddleware(thunk))) //create the store - the store always takes a reducer(in this case allReducers)
 
 //Standard boilerplate code - Wrap provider in the store
 ReactDOM.render(
