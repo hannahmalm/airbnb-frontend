@@ -1,6 +1,6 @@
 import loginForm from "../reducers/loginForm"
 
-export const updateLoginForm = loginFormData => {
+export const loginForm = loginFormData => {
     return {
     //return an action -> key of type with a payload
     //an action is an object

@@ -1,4 +1,5 @@
 //synchronous action creator
+//all actions need a type and a payload
 export const setCurrentUser = user => {
     return {
     //return an action -> key of type with a payload

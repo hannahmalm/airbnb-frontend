@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk' //The redux-thunk middleware, which allows simple asynchronous use of dispatch.
+//Thunk is a A middleware which logs dispatched actions and the resulting new state.
 import { Provider } from 'react-redux' //connects global state (store) to the entire app under ReactDOM
 //Three libraries to import from: redux, redux-thunk, react-redux
 //Redux DevTools for debugging application's state changes.
