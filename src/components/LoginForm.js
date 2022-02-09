@@ -9,16 +9,16 @@ const Login = (props) => {
 
 
     //onSubmit is when the form submit button is pressed
-    const handleSubmit = e => {
-        console.log("submit form")
-        e.preventDefault()
-        login(loginFormData)
-    }
+    // const handleSubmit = e => {
+    //     console.log("submit form")
+    //     e.preventDefault()
+    //     login(loginFormData)
+    // }
 
     return (
-        <form id="login_form" onSubmit={handleSubmit}>
-            <input name="username" type="text" value={props.username} placeholder='Username' onChange={}/>
-            <input name="password" type="text" value={props.password} placeholder='Password' onChange={}/>
+        <form id="login_form" onSubmit={undefined}>
+            <input name="username" type="text" value={props.username} placeholder='Username' />
+            <input name="password" type="text" value={props.password} placeholder='Password' />
             <input type="submit" value="Log In"></input>
         </form>
 

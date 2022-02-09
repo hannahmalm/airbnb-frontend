@@ -9,7 +9,7 @@ class App extends React.Component {
   render(){
     return (
      <div>
-       <LoginForm>Please Log In</LoginForm>
+       <LoginForm></LoginForm>
       </div>
     );
     }
