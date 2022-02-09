@@ -31,8 +31,6 @@ import usersReducer from './reducers/users.js'
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
 const allReducers = combineReducers({
   user: usersReducer //this is what will show up in my store as the key value
-  // currentUser: currentUserReducer,
-  // loginForm: loginFormReducer
 })
 
 //---------CREATING THE STORE ---------------------------------------------------
