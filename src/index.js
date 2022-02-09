@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//--------STORE IMPORTS--------------------------------------------------
+  //Three libraries to import from: redux, redux-thunk, react-redux
+  //Redux DevTools for debugging application's state changes.
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunk from 'redux-thunk' //The redux-thunk middleware, which allows simple asynchronous use of dispatch.
 //Thunk is a A middleware which logs dispatched actions and the resulting new state.
 import { Provider } from 'react-redux' //connects global state (store) to the entire app under ReactDOM
-//Three libraries to import from: redux, redux-thunk, react-redux
-//Redux DevTools for debugging application's state changes.
+
+
 //---------REDUCERS IMPORTED------------------------------------------------------
 import usersReducer from './reducers/users.js'
-//import currentUserReducer from './reducers/currentUser.js'
+
 
 
 //https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/   --BEST VIDEO FOR REDUX 
@@ -25,18 +29,19 @@ import usersReducer from './reducers/users.js'
   //If the state given to it is undefined, it must return the initial state for this specific reducer. 
 
   //https://redux.js.org/api/combinereducers - BEST ARTICLE FOR COMBINED REDUCER
-const combineReducers = combineReducers({
+const allReducers = combineReducers({
   user: usersReducer //this is what will show up in my store as the key value
   // currentUser: currentUserReducer,
   // loginForm: loginFormReducer
 })
 
-//STORE 
+//---------CREATING THE STORE ---------------------------------------------------
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //apply the middleware and dev tools
-
 //creating a store takes 3 args - reduce function, preLoadedState, compose function(applyMiddleware with Thunk)
 //allReducers = A reducing function that returns the next state tree, given the current state tree and an action to handle.
-const store = createStore(combineReducers, composeEnhancer(applyMiddleware(thunk))) //create the store - the store always takes a reducer(in this case allReducers)
+const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk))) //create the store - the store always takes a reducer(in this case allReducers)
+
+
 
 //Standard boilerplate code - Wrap provider in the store
 ReactDOM.render(
