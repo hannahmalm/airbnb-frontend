@@ -64,4 +64,4 @@ const mapStateToProps = state => {
  //second argument is 
  // export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
 // export default Login
-export default connect(mapStateToProps, {updateLoginForm})(Login)
+export default connect(mapStateToProps,{updateLoginForm})(Login)

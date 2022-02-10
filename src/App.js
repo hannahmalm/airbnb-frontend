@@ -7,6 +7,7 @@ import './App.css';
 import Login from './components/LoginForm.js'
 
 
+//render Welcome page with Header (Header has links to sign up or sign in)
 class App extends React.Component {
   render(){
     return (
