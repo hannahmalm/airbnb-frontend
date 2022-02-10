@@ -2,6 +2,8 @@
 //should be simple with just a picture
 //STATELESS - Will have LINKS
 
+//This is what will render in App JS
+
 import React from 'react';
 
 
