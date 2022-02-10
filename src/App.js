@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { login } from './actions/currentUser';
 import './App.css';
+import Header from './components/Header';
 
 
 //IMPORT COMPONENTS TO RENDER
@@ -12,7 +13,8 @@ class App extends React.Component {
   render(){
     return (
      <div>
-       <Login/>
+       {/* <Login/> */}
+       <Header></Header>
       </div>
     );
     }
