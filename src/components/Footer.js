@@ -8,7 +8,9 @@ class Footer extends React.Component {
   render(){
     return (
      <div className='container'>
-         
+         <nav className="navbar fixed-bottom navbar-light bg-light">
+            <a className="navbar-brand" href="#">Fixed bottom</a>
+        </nav>
        
       </div>
     );
