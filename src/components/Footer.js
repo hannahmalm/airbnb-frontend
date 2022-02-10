@@ -7,11 +7,12 @@ import React from 'react';
 class Footer extends React.Component {
   render(){
     return (
-     <div className='container'>
+     <div className='footer-container'>
          <nav className="navbar fixed-bottom navbar-light bg-light">
-            <a className="navbar-brand" href="#">Fixed bottom</a>
+         <a className="nav-link active" aria-current="page" href="#">Explore</a>
+         <a className="nav-link active" aria-current="page" href="#">Reservations</a>
+         <a className="nav-link active" aria-current="page" href="#">Profile</a>
         </nav>
-       
       </div>
     );
     }

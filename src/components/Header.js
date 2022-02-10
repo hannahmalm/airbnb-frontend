@@ -8,7 +8,7 @@ import React from 'react';
 class Header extends React.Component {
   render(){
     return (
-     <div class="container">
+     <div class="header-container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <a className="navbar-brand" href="#"></a>
