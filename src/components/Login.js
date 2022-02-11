@@ -7,22 +7,27 @@ import {login}  from '../actions/currentUser.js'
 //basic login form boilerplate
 //props get passed into functional component as an argument & object
 //const Login = (props, updateLoginForm) => {
-const Login = ({loginForm, updateLoginForm}) => {
+const Login = ({loginFormData, updateLoginForm, login}) => {
 
     //HANDLE CHANGE
     const handleChange = event => {
         const { name, value } = event.target
         const updatedFormInfo = {
-            ...loginForm,
+            ...loginFormData,
             [name]: value
         }
         updateLoginForm(updatedFormInfo)
     }
 
+    const handleSubmit = event => {
+        event.preventDefault()
+        login(loginFormData)
+    }
+
      return (
-        <form onSubmit={undefined}>
-            <input name="username" type="text" value={loginForm.username} placeholder='Username' onChange={handleChange}/>
-            <input name="password" type="text" value={loginForm.password} placeholder='Password' onChange={handleChange}/>
+        <form onSubmit={handleSubmit}>
+            <input name="username" type="text" value={loginFormData.username} placeholder='Username' onChange={handleChange}/>
+            <input name="password" type="text" value={loginFormData.password} placeholder='Password' onChange={handleChange}/>
             <input type="submit" value="Log In"></input>
         </form>
     )
@@ -55,7 +60,7 @@ const mapStateToProps = state => {
 //       password: state.login.password
 //    }
     return {
-        loginForm: state.login
+        loginFormData: state.login
     }
  }
   
@@ -65,4 +70,4 @@ const mapStateToProps = state => {
  //second argument is 
  //export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
 //export default Login
-export default connect(mapStateToProps,{ updateLoginForm })(Login)
+export default connect(mapStateToProps,{ updateLoginForm, login })(Login)
