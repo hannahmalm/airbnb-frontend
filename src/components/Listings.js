@@ -1,23 +1,20 @@
-//renders header & Footer
-//renders card page After Log in
-//stateless
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
-// import { Location } from 'react-router-dom';
+//import ListingCard from './components/ListingCard.js'
 
-//render Welcome page with Header (Header has links to sign up or sign in)
-class Home extends React.Component {
+class Listing extends React.Component {
     render(){
       return (
     <div>
        <Header></Header>
-       {/* <Location></Location> */}
+       {/* <ListingCard></ListingCard> */}
        <Footer></Footer>
     </div>
      );
   }}
 
-  export default Home;
+
+  //On Click of 'Create Reservation', route to Reservation Form
+  export default Listing;

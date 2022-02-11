@@ -62,6 +62,6 @@ const mapStateToProps = state => {
  //returns a component(the Login component)
  //mapstae is the first argument in connect
  //second argument is 
- // export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
-// export default Login
+ //export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
+//export default Login
 export default connect(mapStateToProps,{updateLoginForm})(Login)

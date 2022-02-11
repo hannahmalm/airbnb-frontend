@@ -5,39 +5,32 @@
 //This is what will render in App JS
 
 import React from 'react';
-
+// import LoginForm from './components/LoginForm.js';
+// import Register from './components/Register.js';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 //render Welcome page with Header (Header has links to sign up or sign in)
 class Welcome extends React.Component {
   render(){
     return (
-   
-     <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header className="mb-auto">
-    <div>
-      <h3 className="float-md-start mb-0">Cover</h3>
-      <nav className="nav nav-masthead justify-content-center float-md-end">
-        <a className="nav-link active" aria-current="page" href="#">Home</a>
-        <a className="nav-link" href="#">Features</a>
-        <a className="nav-link" href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main className="px-3">
-    <h1>Cover your page.</h1>
-    <p className="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p className="lead">
-      <a href="#" className="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
-  </main>
-
-  <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-  </footer>
-</div>
-    );
+    <div id="welcome-container" >
+    
+      <div>
+        <h3 className="float-md-start mb-0"></h3>
+        <nav className="nav nav-masthead justify-content-center float-md-end">
+          <a className="nav-link active-welcome" aria-current="page" href="#">Login</a>
+          <a className="nav-link active-welcome" aria-current="page" href="#">Register</a>
+        </nav>
+      </div>
+  
+    <main className="px-3">
+      <h1>Welcome to Air BNB</h1>
+      <p className="lead">Your Adventure Awaits</p>
+      <div> Add Image Here</div>
+    </main>
+  </div>
+      );
+      }
     }
-  }
-
-  export default Welcome;
+    
+    export default Welcome;

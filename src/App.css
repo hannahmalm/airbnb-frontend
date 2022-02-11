@@ -41,3 +41,34 @@
   font-size: large;
   font-weight: bold;
 }
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.px-3 {
+  text-align: center;
+}
+
+.cover-container{
+  background-color: pink;
+}
+
+.nav-link{
+  font-weight: bold;
+  color: black;
+}
+
+.body{
+  color: pink 
+}
