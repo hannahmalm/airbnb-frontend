@@ -15,7 +15,7 @@ import { Provider } from 'react-redux' //connects global state (store) to the en
 
 //---------REDUCERS IMPORTED------------------------------------------------------
 import currentUserReducer from './reducers/currentUser.js'
-import loginReducer from './reducers/login.js'
+import loginReducer from './reducers/loginForm.js'
 
 
 
