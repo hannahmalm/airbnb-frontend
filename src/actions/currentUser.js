@@ -28,12 +28,13 @@ export const login = credentials => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(credentials) //needed for all POST requests
         }) 
-        .then(response => response.json()) //then refactor response into json
-        .then(response => {
-            //dispatch the action to go to the currentUser.js reducer & set the state to current user
-            console.log("logged in")
-            dispatch(getCurrentUser(login))
-        })
+        // .then(response => response.json()) //then refactor response into json
+        
+        // .then(response => {
+        //     //dispatch the action to go to the currentUser.js reducer & set the state to current user
+        //     console.log("logged in")
+        //     dispatch(getCurrentUser(login))
+        // })
     }
 //store.dispatch(login)  //--> Thunk is dispatched by calling the action creater
 }

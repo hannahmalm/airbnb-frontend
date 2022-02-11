@@ -1,13 +1,13 @@
-const initialLoginState = {
+const initialState = {
     username: "",
     password: ""
 }
 
 //defined the intial state of the login form 
-export default (state = initialLoginState, action)  => {
+export default (state = initialState, action)  => {
     switch (action.type){
         case "UPDATE_LOGIN_FORM":
-            return action.loginFormData
+            return action.formData
         default:
         return state
     }

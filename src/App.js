@@ -6,7 +6,7 @@ import './App.css';
 
 //IMPORT COMPONENTS TO RENDER
 import Welcome from './components/Welcome';
-import LoginForm from './components/LoginForm';
+import Login from './components/Login';
 
 
 //render Welcome page with Header (Header has links to sign up or sign in)
@@ -16,7 +16,7 @@ class App extends React.Component {
      <div>
        {/* <Login/> */}
       <Welcome></Welcome>
-      <LoginForm></LoginForm>
+      <Login></Login>
       </div>
     );
     }

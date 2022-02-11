@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux' //The connect() function connects a React component to a Redux store.
 import { updateLoginForm } from '../actions/loginForm.js' //import action creator
+import {login}  from '../actions/currentUser.js'
 
 
 //basic login form boilerplate
@@ -12,7 +13,7 @@ const Login = ({loginForm, updateLoginForm}) => {
     const handleChange = event => {
         const { name, value } = event.target
         const updatedFormInfo = {
-            ...login,
+            ...loginForm,
             [name]: value
         }
         updateLoginForm(updatedFormInfo)
@@ -64,4 +65,4 @@ const mapStateToProps = state => {
  //second argument is 
  //export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
 //export default Login
-export default connect(mapStateToProps,{updateLoginForm})(Login)
+export default connect(mapStateToProps,{ updateLoginForm })(Login)
